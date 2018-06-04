@@ -1,0 +1,48 @@
+{
+  "name": "xarray-loader",
+  "version": "0.1.1",
+  "description": "Load dataset exported from xarray.to_dict() in Python",
+  "author": "buckle2000",
+  "license": "MIT",
+  "keywords": [
+    "data",
+    "data science",
+    "xarray",
+    "python",
+    "netcdf",
+    "netcdf4"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buckle2000/xarray-loader-browser.git"
+  },
+  "main": "dist/xarray-loader.umd.js",
+  "browser": "dist/xarray-loader.min.js",
+  "module": "src/index.js",
+  "jsnext:main": "src/index.js",
+  "types": "dist/xarray-loader.d.ts",
+  "scripts": {
+    "build": "npm run build-d && npm run build-umd",
+    "build-d": "rollup src/index.js --o dist/xarray-loader.js --f iife --name \"XarrayLoader\" && npm run minify-d",
+    "minify-d": "terser dist/xarray-loader.js -o dist/xarray-loader.min.js --compress --mangle",
+    "build-umd": "rollup src/index.js --o dist/xarray-loader.umd.js --f umd --name \"XarrayLoader\" && npm run minify-umd",
+    "minify-umd": "terser dist/xarray-loader.umd.js -o dist/xarray-loader.umd.min.js --compress --mangle",
+    "test": "mocha --require babel-core/register",
+    "lint": "eslint src",
+    "prepublish": "yarn build && yarn lint && yarn test"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "mocha": "^5.2.0",
+    "rollup": "^0.59.4",
+    "rollup-plugin-terser": "^1.0.1"
+  },
+  "optionalDependencies": {
+    "msgpack-js-browser": "^0.1.4"
+  }
+}
