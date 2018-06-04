@@ -1,6 +1,6 @@
 {
   "name": "xarray-loader",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Load dataset exported from xarray.to_dict() in Python",
   "author": "buckle2000",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "url": "https://github.com/buckle2000/xarray-loader-browser.git"
   },
   "main": "dist/xarray-loader.umd.js",
-  "browser": "dist/xarray-loader.min.js",
+  "browser": "dist/xarray-loader.umd.min.js",
   "module": "src/index.js",
   "jsnext:main": "src/index.js",
   "types": "dist/xarray-loader.d.ts",
