@@ -1,6 +1,6 @@
 {
   "name": "xarray-loader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Load dataset exported from xarray.to_dict() in Python",
   "author": "buckle2000",
   "license": "MIT",
